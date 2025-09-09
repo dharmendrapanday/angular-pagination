@@ -1,0 +1,67 @@
+/* In styles.css */
+.my-custom-tabs .mat-tab-label {
+  min-width: 25px;
+  padding: 10px 20px; /* Reduced for better UX */
+  background-color: transparent;
+  color: #eb0707;
+  opacity: 1;
+  font-weight: 700;
+}
+
+.my-custom-tabs .mdc-tab__text-label {
+  color: #eb0707;
+}
+
+/* Optional: Style active tab */
+.my-custom-tabs .mat-tab-label-active {
+  background-color: #eb0707;
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .my-custom-tabs .mat-tab-label {
+    padding: 8px 16px;
+    min-width: 20px;
+  }
+}
+
+.home-icon {
+  margin-right: 8px; /* adjust as needed */
+  vertical-align: middle; /* keeps text aligned with icon */
+}
+
+.header-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  height: 36px;
+  width: auto;
+}
+
+.app-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.header-actions {
+  display: flex;
+  gap: 8px;
+}

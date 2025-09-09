@@ -1,0 +1,112 @@
+export const STUDENT_DATA = {
+  "page": 1,
+  "pageSize": 5,
+  "totalPages": 4,
+  "totalRecords": 20,
+  "students": [
+    {
+      "id": 1,
+      "name": "Suryank Mishra",
+      "age": 20,
+      "grade": "A",
+      "gpa": 3.9,
+      "department": "Computer Science",
+      "year": "Sophomore",
+      "email": "Suryank.Mishra@example.com",
+      "phone": "+1-202-555-0110",
+      "address": "123 Maple St, Springfield",
+      "enrolledDate": "2023-08-21"
+    },
+    {
+      "id": 2,
+      "name": "Brian Smith",
+      "age": 21,
+      "grade": "B",
+      "gpa": 3.4,
+      "department": "Mechanical Engineering",
+      "year": "Junior",
+      "email": "brian.smith@example.com",
+      "phone": "+1-202-555-0123",
+      "address": "456 Oak Ave, Rivertown",
+      "enrolledDate": "2022-09-10"
+    },
+    {
+      "id": 3,
+      "name": "Carla Gomez",
+      "age": 19,
+      "grade": "A",
+      "gpa": 3.8,
+      "department": "Biology",
+      "year": "Freshman",
+      "email": "carla.gomez@example.com",
+      "phone": "+1-202-555-0199",
+      "address": "789 Pine Rd, Lakeside",
+      "enrolledDate": "2024-01-15"
+    },
+    {
+      "id": 4,
+      "name": "David Lee",
+      "age": 22,
+      "grade": "C",
+      "gpa": 2.9,
+      "department": "Civil Engineering",
+      "year": "Senior",
+      "email": "david.lee@example.com",
+      "phone": "+1-202-555-0177",
+      "address": "101 Elm St, Greenfield",
+      "enrolledDate": "2021-08-30"
+    },
+    {
+      "id": 5,
+      "name": "Ella Brown",
+      "age": 20,
+      "grade": "B",
+      "gpa": 3.5,
+      "department": "Business Administration",
+      "year": "Sophomore",
+      "email": "ella.brown@example.com",
+      "phone": "+1-202-555-0144",
+      "address": "202 Cedar Ave, Hilltown",
+      "enrolledDate": "2023-08-21"
+    },
+    {
+      "id": 6,
+      "name": "Ella Brown",
+      "age": 20,
+      "grade": "B",
+      "gpa": 3.5,
+      "department": "Business Administration",
+      "year": "Sophomore",
+      "email": "ella.brown@example.com",
+      "phone": "+1-202-555-0144",
+      "address": "202 Cedar Ave, Hilltown",
+      "enrolledDate": "2023-08-21"
+    },
+    {
+      "id": 7,
+      "name": "Ella Brown",
+      "age": 20,
+      "grade": "B",
+      "gpa": 3.5,
+      "department": "Business Administration",
+      "year": "Sophomore",
+      "email": "ella.brown@example.com",
+      "phone": "+1-202-555-0144",
+      "address": "202 Cedar Ave, Hilltown",
+      "enrolledDate": "2023-08-21"
+    },
+     {
+      "id": 8,
+      "name": "Alice Johnson",
+      "age": 20,
+      "grade": "A",
+      "gpa": 3.9,
+      "department": "Computer Science",
+      "year": "Sophomore",
+      "email": "alice.johnson@example.com",
+      "phone": "+1-202-555-0110",
+      "address": "123 Maple St, Springfield",
+      "enrolledDate": "2023-08-21"
+    }
+  ]
+}

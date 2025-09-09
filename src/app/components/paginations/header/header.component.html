@@ -1,0 +1,49 @@
+<div>
+<mat-toolbar color="primary" class="header-toolbar">
+  <!-- Left: Logo -->
+  <div class="header-left">
+    <img src="assets/images/logo.png" alt="Logo" class="logo">
+    <span class="app-title">My App</span>
+  </div>
+
+  <span class="spacer"></span>
+
+  <!-- Right: Actions -->
+  <div class="header-actions">
+    <button mat-icon-button aria-label="Home">
+      <mat-icon (click)="redirectHomePage($event)">home</mat-icon>
+    </button>
+    <button mat-icon-button aria-label="Notifications">
+      <mat-icon>notifications</mat-icon>
+    </button>
+    <button mat-icon-button aria-label="Profile">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+
+
+</div>
+
+
+<div>
+  <mat-tab-group [selectedIndex]="defaultTab" (selectedTabChange)="onTabChange($event)" class="my-custom-tabs"
+    dynamicHeight mat-stretch-tabs="false" mat-align-tabs="left">
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="home-icon" aria-hidden="false" fontIcon="home"></mat-icon>
+        Home
+      </ng-template>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        Second
+      </ng-template>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        Third
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</div>
