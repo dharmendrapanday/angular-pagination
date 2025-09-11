@@ -22,8 +22,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let row of paginatedData">
-        <td *ngFor="let col of columns" class="border px-4 py-2">
+      <tr *ngFor="let row of paginatedData" (dblclick)="onRowDblClick(row)">
+        <td *ngFor="let col of columns" class="border px-4 py-2" (dblclick)="onRowDblClick(row)">
           {{ row[col.field] }}
         </td>
       </tr>

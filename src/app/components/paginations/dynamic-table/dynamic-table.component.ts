@@ -5,6 +5,7 @@ import { Student } from '../../../../assets/data/models/students';
 import { MatIconModule } from '@angular/material/icon';
 import { ColumnMdl, header } from '../../../../assets/data/models/columns';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dynamic-table',
@@ -14,7 +15,6 @@ import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
   styleUrls: ['./dynamic-table.component.css'],
 })
 export class DynamicTableComponent implements OnInit {
-
   sortField: keyof Student | '' = '';
   sortDirection: 'asc' | 'desc' = 'asc';
   columns: ColumnMdl[] = [];
@@ -26,6 +26,7 @@ export class DynamicTableComponent implements OnInit {
   pageSizeOptions = [2, 5, 10, 25, 100];
   pageIndex = 0;
 
+  constructor(private router: Router) {}
   ngOnInit(): void {
     this.columns = header;
     this.data = STUDENT_DATA.students;
@@ -47,24 +48,31 @@ export class DynamicTableComponent implements OnInit {
       const bValue = b[col.field];
       if (aValue == null || bValue == null) return 0;
       return this.sortDirection === 'asc'
-        ? aValue > bValue ? 1 : -1
-        : aValue < bValue ? 1 : -1;
+        ? aValue > bValue
+          ? 1
+          : -1
+        : aValue < bValue
+        ? 1
+        : -1;
     });
 
     this.updatePaginatedData();
   }
 
-
   onPageChange(event: PageEvent) {
     this.pageIndex = event.pageIndex;
     this.pageSize = event.pageSize;
     this.updatePaginatedData();
-  } 
-
+  }
 
   private updatePaginatedData() {
     const startIndex = this.pageIndex * this.pageSize;
     const endIndex = startIndex + this.pageSize;
     this.paginatedData = this.data.slice(startIndex, endIndex);
+  }
+
+  onRowDblClick(row: any): void {
+    console.log('Double-clicked row:', row);
+    this.router.navigate(['/stduent-details'], { state: { student: row } });
   }
 }
