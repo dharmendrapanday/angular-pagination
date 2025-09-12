@@ -1,0 +1,73 @@
+<mat-card class="student-registration-card">
+    <mat-card-header>
+        <mat-card-title>Student Registration</mat-card-title>
+        <mat-card-subtitle>Fill in your details</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+        <form class="student-registration-form" #studentForm="ngForm">
+
+            <!-- Full Name -->
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Full Name</mat-label>
+                <input matInput placeholder="Enter your full name" name="fullName" ngModel required />
+            </mat-form-field>
+
+            <!-- Email -->
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" placeholder="Enter your email" name="email" ngModel required email />
+            </mat-form-field>
+
+            <!-- Phone -->
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Phone Number</mat-label>
+                <input matInput type="tel" placeholder="Enter your phone number" name="phone" ngModel
+                    pattern="[0-9]{10}" />
+                <mat-hint>10 digits</mat-hint>
+            </mat-form-field>
+
+            <!-- Date of Birth -->
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Date of Birth</mat-label>
+                <input matInput [matDatepicker]="dobPicker" placeholder="Select date" name="dob" ngModel required />
+                <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
+                <mat-datepicker #dobPicker></mat-datepicker>
+            </mat-form-field>
+
+            <!-- Gender -->
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Gender</mat-label>
+                <mat-select name="gender" ngModel required>
+                    <mat-option value="male">Male</mat-option>
+                    <mat-option value="female">Female</mat-option>
+                    <mat-option value="other">Other</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <!-- Address -->
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Address</mat-label>
+                <textarea matInput placeholder="Enter your address" rows="3" name="address" ngModel></textarea>
+            </mat-form-field>
+
+            <!-- Course -->
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Course</mat-label>
+                <mat-select name="course" ngModel required>
+                    <mat-option value="bsc">B.Sc</mat-option>
+                    <mat-option value="bca">BCA</mat-option>
+                    <mat-option value="bcom">B.Com</mat-option>
+                    <mat-option value="ba">BA</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <!-- Buttons -->
+            <div class="form-actions">
+                <button mat-raised-button color="primary" [disabled]="!studentForm.valid">Register</button>
+                <button mat-button type="reset">Clear</button>
+            </div>
+
+        </form>
+    </mat-card-content>
+</mat-card>

@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { STUDENT_DATA } from '../../../../assets/data/students';
-import { Student } from '../../../../assets/data/models/students';
 import { MatIconModule } from '@angular/material/icon';
-import { ColumnMdl, header } from '../../../../assets/data/models/columns';
+
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { Router } from '@angular/router';
+import { Student } from '../../../assets/data/models/students';
+import { ColumnMdl, header } from '../../../assets/data/models/columns';
+import { STUDENT_DATA } from '../../../assets/data/students';
 
 @Component({
   selector: 'app-dynamic-table',
@@ -73,6 +74,6 @@ export class DynamicTableComponent implements OnInit {
 
   onRowDblClick(row: any): void {
     console.log('Double-clicked row:', row);
-    this.router.navigate(['/stduent-details'], { state: { student: row } });
+    this.router.navigate(['/student-details'], { state: { student: row } });
   }
 }

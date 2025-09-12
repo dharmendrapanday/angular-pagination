@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DynamicTableComponent } from "../dynamic-table/dynamic-table.component";
+import { DynamicTableComponent } from '../../dynamic-table/dynamic-table.component';
 
 @Component({
   selector: 'app-tab-content-first',
@@ -9,4 +9,4 @@ import { DynamicTableComponent } from "../dynamic-table/dynamic-table.component"
 })
 export class TabContentFirstComponent {
 
-}
+} 

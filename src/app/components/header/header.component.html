@@ -11,7 +11,7 @@
   <!-- Right: Actions -->
   <div class="header-actions">
     <button mat-icon-button aria-label="Home">
-      <mat-icon (click)="redirectHomePage($event)">home</mat-icon>
+      <mat-icon (click)="redirectHomePage()">home</mat-icon>
     </button>
     <button mat-icon-button aria-label="Notifications">
       <mat-icon>notifications</mat-icon>
@@ -27,8 +27,12 @@
 
 
 <div>
-  <mat-tab-group [selectedIndex]="defaultTab" (selectedTabChange)="onTabChange($event)" class="my-custom-tabs"
-    dynamicHeight mat-stretch-tabs="false" mat-align-tabs="left">
+  <mat-tab-group class="my-custom-tabs"
+  [(selectedIndex)]="selectedTabIndex"
+  (selectedTabChange)="onTabChange($event)"
+  class="my-custom-tabs"
+  dynamicHeight
+  mat-stretch-tabs="false" mat-align-tabs="left">
     <mat-tab>
       <ng-template mat-tab-label>
         <mat-icon class="home-icon" aria-hidden="false" fontIcon="home"></mat-icon>
