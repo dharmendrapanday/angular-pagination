@@ -2,15 +2,15 @@
   <div class="student-action">
     <mat-divider></mat-divider>
 
-    <a mat-flat-button color="primary" class="small-btn" routerLink="/all-students">
+    <a mat-flat-button color="primary" class="small-btn" routerLink="all-students">
       All Students
     </a>
 
-    <a mat-flat-button color="primary" class="small-btn" routerLink="/add-student">
+    <a mat-flat-button color="primary" class="small-btn" routerLink="add-student">
       Add Student
     </a>
 
-    <a mat-flat-button color="primary" class="small-btn" routerLink="/dekete-student">
+    <a mat-flat-button color="primary" class="small-btn" routerLink="delete-student">
       Delete Student
     </a>
 
@@ -18,8 +18,6 @@
   </div>
 
   <div class="student-section">
-    <app-tab-content-first></app-tab-content-first>
-
+    <router-outlet></router-outlet>
   </div>
 </div>
-  

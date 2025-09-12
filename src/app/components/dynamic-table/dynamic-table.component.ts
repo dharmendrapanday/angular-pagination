@@ -74,6 +74,6 @@ export class DynamicTableComponent implements OnInit {
 
   onRowDblClick(row: any): void {
     console.log('Double-clicked row:', row);
-    this.router.navigate(['/student-details'], { state: { student: row } });
+    this.router.navigate(['/student-section/student-details'], { state: { student: row } });
   }
 }
