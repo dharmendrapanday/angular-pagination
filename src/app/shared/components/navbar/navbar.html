@@ -1,0 +1,17 @@
+<nav>
+  <mat-toolbar class="toolbar">
+    <span class="logo">
+     <img  src="assets/images/logo/bjcms.png" alt="Logo">
+      {{ title }}
+      </span>
+    <span class="spacer"></span>
+
+    @for(item of navbarData; track item.id) {
+    <a class="nav-labels" mat-button  [routerLink]="item.route">
+      <mat-icon class="icon">{{ item.icon }}</mat-icon>
+      {{ item.label }}
+    </a>
+    }
+        <mat-slide-toggle class="mat-slide-toggle" >	<mat-icon class="mat-slide-toggle-thumb">brightness_7</mat-icon></mat-slide-toggle>
+  </mat-toolbar>
+</nav>

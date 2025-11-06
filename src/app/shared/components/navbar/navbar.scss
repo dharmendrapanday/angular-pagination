@@ -1,0 +1,119 @@
+// @use '@angular/material' as mat;
+
+// .toolbar {
+//   @include mat.toolbar-overrides((
+//     container-background-color: var(--mat-sys-primary-container),
+//     container-text-color: var(--mat-sys-on-primary-container),
+//     standard-height: 5rem, 
+//   ));
+// }
+// .logo {
+//   display: flex;
+//   align-items: center;
+//   gap: 12px;
+//   font-size: 1.6rem;
+// }
+
+// .logo img {
+//   height: 2rem; /* scales logo nicely for toolbar */
+//   width: auto; /* keep aspect ratio */
+//   object-fit: contain;
+//   border-radius: 6px; /* optional soft rounding */
+//   transition: transform 0.3s ease;
+// }
+
+// /* Hover effect (optional) */
+// .logo img:hover {
+//   transform: scale(1.05);
+// }
+// .spacer {
+//   flex: 1 1 auto;
+// }
+// .nav-labels{
+//     @include mat.button-overrides((
+//   ));
+ 
+//   margin: 10px;
+// &:hover {
+//    transition: transform 0.3s ease;
+//      padding: 2rem;
+//   }
+// }
+@use '@angular/material' as mat;
+
+.toolbar {
+  @include mat.toolbar-overrides((
+    container-background-color: var(--mat-sys-primary-container),
+    container-text-color: var(--mat-sys-on-primary-container),
+    standard-height: 5rem, 
+  ));
+&{
+  display: flex;
+  align-items: center;
+  padding: 0 2rem; 
+}
+}
+
+/* Logo Styling */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.6rem;
+  font-family: "Anton", sans-serif;
+   font-weight: 100;
+  letter-spacing: 7px;
+  cursor: pointer;
+}
+
+.logo img {
+  height: 2rem;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Flexible Spacer */
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Navbar Buttons */
+.nav-labels {
+  @include mat.button-overrides((
+    text-with-icon-horizontal-padding: 1.2rem,
+  ));
+&{
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  gap: 6px;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+  &:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem; // smooth padding increase
+  }
+
+  mat-icon {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover mat-icon {
+    transform: scale(1.2);
+  }
+}
+
+/* Slide Toggle Styling */
+.mat-slide-toggle {
+  margin-left: 1rem;
+
+  .mat-slide-toggle-thumb {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  &:hover .mat-slide-toggle-thumb {
+    transform: scale(1.2);
+  }
+}

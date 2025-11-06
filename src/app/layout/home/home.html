@@ -1,0 +1,138 @@
+<div class="home-container">
+  <section class="hero-section">
+    <app-slider [images]="carouselImages" [autoPlay]="true" [interval]="4000"></app-slider>
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h1>Transform Your School's Management</h1>
+        <p>BJCMS provides an all-in-one solution for seamless administration.</p>
+        <button mat-flat-button color="primary">Request a Demo</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="features-section">
+    <h2 class="section-title">Core Features</h2>
+    <p class="section-subtitle">Everything you need to run your institution efficiently.</p>
+    <div class="features-grid">
+      @for(feature of features ; track $index){
+        <mat-card class="feature-card">
+        <mat-card-header>
+          <mat-icon mat-card-avatar>{{feature.icon}}</mat-icon>
+          <mat-card-title>{{feature.title}}</mat-card-title>
+          <mat-card-subtitle>{{feature.subtitle}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            {{feature.description}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+      }
+    </div>
+  </section>
+
+  <section class="two-column-section">
+    <div class="column-item why-us-content">
+      <mat-icon class="secure-icon">verified_user</mat-icon>
+      <h2>Why Choose BJCMS?</h2>
+      <ul>
+        <li>Trusted by 100+ schools nationwide</li>
+        <li>Secure, scalable cloud-based architecture</li>
+        <li>Dedicated parent-teacher collaboration tools</li>
+        <li>Instant notifications & actionable insights</li>
+        <li>24/7 priority customer support</li>
+      </ul>
+    </div>
+    <div class="column-item design-content">
+      <img src="assets/images/dashboard-preview.webp" alt="Dashboard Preview" />
+      <h3>Modern & Intuitive Design</h3>
+      <p>
+        Our interface is built for simplicity and speed. Navigate, manage tasks, and view data
+        without technical expertise.
+      </p>
+    </div>
+  </section>
+
+  <section class="testimonials-section">
+    <h2 class="section-title">What Our Schools Say</h2>
+    <div class="testimonials-grid">
+      <mat-card class="testimonial-card">
+        <mat-icon class="quote-icon">format_quote</mat-icon>
+        <p>
+          "Since we adopted this system, student data management and communication have become
+          effortless!"
+        </p>
+        <footer>— Principal, Bright Future School</footer>
+      </mat-card>
+      <mat-card class="testimonial-card">
+        <mat-icon class="quote-icon">format_quote</mat-icon>
+        <p>
+          "Parents love the attendance and report notifications. It’s a game-changer for parent
+          engagement."
+        </p>
+        <footer>— Teacher, Green Valley Academy</footer>
+      </mat-card>
+    </div>
+  </section>
+
+  <section class="pricing-section">
+    <h2 class="section-title">Affordable Pricing Plans</h2>
+    <p class="section-subtitle">Choose the perfect plan for your institution's size and needs.</p>
+    <div class="pricing-grid">
+      <mat-card class="price-card">
+        <mat-card-header>
+          <mat-card-title>Basic</mat-card-title>
+          <mat-card-subtitle>For small schools</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="price">₹499<span>/month</span></div>
+          <button mat-stroked-button color="primary">Choose Plan</button>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="price-card popular">
+        <div class="popular-badge">Most Popular</div>
+        <mat-card-header>
+          <mat-card-title>Standard</mat-card-title>
+          <mat-card-subtitle>For growing institutions</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="price">₹999<span>/month</span></div>
+          <button mat-raised-button color="primary">Choose Plan</button>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="price-card">
+        <mat-card-header>
+          <mat-card-title>Premium</mat-card-title>
+          <mat-card-subtitle>For large campuses</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="price">₹1999<span>/month</span></div>
+          <button mat-stroked-button color="primary">Choose Plan</button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <mat-accordion class="faq-accordion" multi="true">
+      @for(faq of faqs; track $index){
+      <mat-expansion-panel class="faq-panel">
+        <mat-expansion-panel-header class="faq-header">
+          <mat-panel-title class="faq-title">{{faq.question}}</mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>
+          {{faq.answer}}
+        </p></mat-expansion-panel>
+      }
+    </mat-accordion>
+  </section>
+
+  <section class="cta-section">
+    <h2>Ready to Simplify School Management?</h2>
+    <p>Join hundreds of schools revolutionizing their operations with BJCMS.</p>
+    <button mat-raised-button color="primary" class="cta-button">Get Started Today</button>
+  </section>
+</div>

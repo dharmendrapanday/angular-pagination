@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 
 import { HeaderComponent } from "./components/header/header.component";
-import { FooterComponent } from "./components/footer/footer.component";
+import { Footer } from "./shared/components/footer/footer";
 import { RouterOutlet } from '@angular/router';
 import { MatTabNav, MatTabsModule } from '@angular/material/tabs';
 import { CommonModule } from '@angular/common';
-
+import { Navbar } from './shared/components/navbar/navbar';
+import{Home} from './layout/home/home'
 @Component({
   selector: 'app-root',
-  imports: [CommonModule,HeaderComponent, FooterComponent,RouterOutlet,MatTabsModule],
+    imports: [CommonModule,HeaderComponent, Footer,RouterOutlet,MatTabsModule,Navbar,Home],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 }) 

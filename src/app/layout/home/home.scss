@@ -1,0 +1,347 @@
+/* --- GLOBAL STYLES & VARIABLES --- */
+// :host {
+//   --mat-sys-primary: #3f51b5; // Example Material Indigo
+//   --accent-color: #ff4081; // Example Material Pink
+//   --mat-sys-on-surface: #212121;
+//   --mat-sys-on-surface: #616161;
+//   --border-radius: 12px;
+//   --mat-sys-level1: 0 4px 20px rgba(0, 0, 0, 0.08);
+// }
+
+// .home-container {
+//   width: 100%;
+// }
+
+/* --- UTILITY CLASSES --- */
+section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--mat-sys-on-surface);
+  margin-bottom: 1.7rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--mat-sys-on-surface);
+  max-width: 600px;
+  margin: 0 auto 3rem auto;
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+  position: relative;
+  padding: 0;
+  height: 80vh; // Adjust height as needed
+  color: white;
+
+  app-slider {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: end;
+  }
+
+  .hero-content {
+    margin-bottom: 6rem;
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    button {
+      padding: 0.8rem 2.5rem;
+      font-size: 1rem;
+      border-radius: 50px;
+    }
+  }
+}
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  border-radius: 12px;
+  box-shadow: var(--mat-sys-level1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--mat-sys-level4);
+  }
+
+  mat-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1rem;
+  }
+
+  mat-icon[mat-card-avatar] {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+    color: var(--mat-sys-primary);
+  }
+}
+
+/* --- TWO-COLUMN SECTION (WHY CHOOSE US & DESIGN) --- */
+.two-column-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 5rem 2rem;
+}
+
+.column-item {
+  h2, h3 {
+    
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+  }
+
+  mat-icon {
+    color: var(--mat-sys-primary);
+    font-size: 40px;
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.why-us-content ul {
+  list-style: none;
+  padding: 0;
+  li {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    &::before {
+      content: 'check_circle';
+      font-family: 'Material Icons';
+      color: var(--mat-sys-primary);
+      margin-right: 0.8rem;
+    }
+  }
+}
+
+.design-content img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: var(--mat-sys-level1);
+  margin-bottom: 1.5rem;
+}
+
+
+.testimonials-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.testimonial-card {
+  flex: 1 1 400px;
+  max-width: 450px;
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 5px solid var(--mat-sys-primary);
+  box-shadow: none;
+  text-align: left;
+  .quote-icon {
+    font-size: 40px;
+    color: #e0e0e0;
+  }
+  p {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--mat-sys-on-surface);
+    margin: 0.5rem 0;
+  }
+  footer {
+    font-weight: 600;
+    color: var(--mat-sys-on-surface);
+    margin-top: 1rem;
+    text-align: right;
+  }
+}
+
+
+/* --- PRICING SECTION --- */
+.pricing-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.price-card {
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: var(--mat-sys-level1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+  position: relative;
+  border: 1px solid #e0e0e0;
+
+  &:hover {
+    transform: scale(1.05);
+     box-shadow: var(--mat-sys-level5);
+  }
+
+
+  &.popular {
+    border: 2px solid var(--mat-sys-primary);
+  }
+  .popular-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--mat-sys-primary);
+    color: var(--mat-sys-on-primary);
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 1.5rem 0;
+    color: var(--mat-sys-on-surface);
+    span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--mat-sys-on-surface);
+    }
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+.faq-accordion {
+  display: block;
+  max-width: 60%;
+  margin: 3rem auto 0;
+  text-align: left;
+}
+.mat-expansion-panel-header {
+  padding: 0.7rem 1rem;
+}
+
+
+/* --- CALL TO ACTION (CTA) SECTION --- */
+.cta-section {
+  background-color: var(--mat-sys-primary);
+  color:var(--mat-sys-on-primary);
+
+  h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color:var(--mat-sys-on-primary);
+  }
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  .cta-button {
+    color: var(--mat-sys-primary);
+    padding: 0.8rem 2.5rem;
+    font-size: 1rem;
+    border-radius: 50px;
+  }
+}
+
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 992px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .hero-section {
+    height: 70vh;
+    .hero-content h1 {
+      font-size: 2.8rem;
+    }
+  }
+  
+  .two-column-section {
+    grid-template-columns: 1fr;
+    text-align: center;
+    .column-item {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .why-us-content ul {
+      text-align: left;
+    }
+  }
+  .hero-content {
+    margin-bottom: 6rem;
+    h1 {
+      font-size: 2rem;
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+    p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    button {
+      padding: 0.8rem 2.5rem;
+      font-size: 1rem;
+      border-radius: 50px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 1rem;
+  }
+  
+  .hero-section {
+    height: 60vh;
+    .hero-content {
+      h1 { font-size: 2.2rem; }
+      p { font-size: 1.1rem; }
+    }
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}

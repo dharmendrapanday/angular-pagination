@@ -1,0 +1,30 @@
+<div class="carousel-container" (mouseenter)="stopAutoPlay()" (mouseleave)="startAutoPlay()">
+  <div class="carousel-track" [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
+    @for (image of images; track image.src) {
+      <div class="carousel-slide">
+        <img [src]="image.src" [alt]="image.alt" class="carousel-image" />
+        @if (image.title) {
+          <div class="shadow"></div>
+          <div class="carousel-image-title">{{ image.title }}</div>
+        }
+      </div>
+    }
+  </div>
+
+  <button class="carousel-button prev" (click)="prevImage()">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+  </button>
+  <button class="carousel-button next" (click)="nextImage()">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+  </button>
+
+  <div class="carousel-indicators">
+    @for (image of images; track $index) {
+      <button
+        class="indicator"
+        [class.active]="currentIndex === $index"
+        (click)="setCurrentIndex($index)"
+      ></button>
+    }
+  </div>
+</div>
