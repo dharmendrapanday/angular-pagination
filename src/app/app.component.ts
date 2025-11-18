@@ -7,9 +7,11 @@ import { MatTabNav, MatTabsModule } from '@angular/material/tabs';
 import { CommonModule } from '@angular/common';
 import { Navbar } from './shared/components/navbar/navbar';
 import{Home} from './layout/home/home'
+import { LoginComponent } from './layout/login/login.component';
+import { SignupComponent } from './layout/signup/signup.component';
 @Component({
   selector: 'app-root',
-    imports: [CommonModule,HeaderComponent, Footer,RouterOutlet,MatTabsModule,Navbar,Home],
+    imports: [CommonModule,HeaderComponent,LoginComponent,SignupComponent, Footer,RouterOutlet,MatTabsModule,Navbar,Home],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 }) 
